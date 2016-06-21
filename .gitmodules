@@ -1,3 +1,6 @@
 [submodule "vim.symlink/bundle/vim-pathogen"]
 	path = vim.symlink/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule "vim.symlink/bundle/Command-T"]
+	path = vim.symlink/bundle/Command-T
+	url = https://github.com/wincent/Command-T.git

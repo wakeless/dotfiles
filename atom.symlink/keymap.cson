@@ -1,2 +1,8 @@
 '.platform-darwin atom-text-editor':
-  'cmd-t': 'symbols-view:toggle-file-symbols'
+  'cmd-r': 'unset!'
+
+'.platform-darwin':
+  'cmd-r': 'fuzzy-finder:toggle-file-finder'
+
+'atom-text-editor.vim-mode.normal-mode':
+  ', w': 'custom:save-and-add'

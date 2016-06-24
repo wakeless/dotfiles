@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar ~/Downloads/selenium-server-standalone-2.53.0.jar

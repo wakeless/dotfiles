@@ -1,1 +1,3 @@
 --after-context=3
+--no-color
+--ignore-case

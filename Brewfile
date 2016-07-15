@@ -21,7 +21,12 @@ brew 'unrar'
 brew 'wget'
 brew 'youtube-dl'
 brew 'ack'
+brew 'macvim'
 
+cask "java"
+
+cask 'skype'
+cask 'iterm2'
 cask 'adium'
 cask 'atom'
 cask 'firefox'
@@ -31,3 +36,7 @@ cask 'steam'
 cask 'transmission'
 cask 'vlc'
 cask 'sketch'
+cask 'lastpass'
+cask 'twitter'
+
+cask "android-studio"

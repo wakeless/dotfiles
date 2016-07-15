@@ -29,8 +29,8 @@
       "vendor"
     ]
     themes: [
-      "unity-ui"
-      "glacier-syntax"
+      "atom-light-ui"
+      "atom-dark-syntax"
     ]
   editor:
     fontFamily: "Menlo"
@@ -43,6 +43,8 @@
     goPath: "/Users/holman/Code/go"
   nuclide:
     installRecommendedPackages: true
+    "nuclide-flow":
+      warnOnNotInstalled: false
     "nuclide-home":
       showHome: false
   "release-notes":

@@ -38,5 +38,7 @@ cask 'vlc'
 cask 'sketch'
 cask 'lastpass'
 cask 'twitter'
+cask 'twitter'
+cask 'thunderbird'
 
 cask "android-studio"

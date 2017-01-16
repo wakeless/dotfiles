@@ -17,6 +17,7 @@
       "exception-reporting"
       "metrics"
       "tree-view"
+      "linter-eslint"
     ]
     followSymlinks: false
     hideGitIgnoredFiles: true
@@ -28,6 +29,7 @@
       "tmp"
       "vendor"
     ]
+    telemetryConsent: "limited"
     themes: [
       "atom-light-ui"
       "atom-dark-syntax"

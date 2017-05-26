@@ -1,11 +1,9 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-
 syntax on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
 
-set shiftwidth=2 smarttab expandtab
-
-:nnoremap Q @q
+nnoremap Q @q
+set tabstop=2
+set expandtab
+set shiftwidth=2

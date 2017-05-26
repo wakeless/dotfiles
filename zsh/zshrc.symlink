@@ -12,6 +12,8 @@ then
   source ~/.localrc
 fi
 
+eval "$(rbenv init -)"
+
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
@@ -39,6 +41,3 @@ do
 done
 
 unset config_files
-
-# added by travis gem
-[ -f /Users/michaelgall/.travis/travis.sh ] && source /Users/michaelgall/.travis/travis.sh

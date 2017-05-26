@@ -1,14 +1,17 @@
 '.platform-darwin atom-text-editor':
-  'cmd-r': 'unset!'
-
-'.platform-darwin':
+  'cmd-r': 'fuzzy-finder:toggle-file-finder'
+'body':
   'cmd-r': 'fuzzy-finder:toggle-file-finder'
 
-'atom-text-editor.vim-mode.normal-mode':
-  ', w': 'custom:save-and-add'
 
-'body':
-  'ctrl-tab': 'pane:show-next-item'
-  'ctrl-tab ^ctrl': 'unset!'
-  'ctrl-shift-tab': 'pane:show-previous-item'
-  'ctrl-shift-tab ^ctrl': 'unset!'
+'atom-text-editor.vim-mode-plus.normal-mode':
+  ', t': 'ruby-test:test-single'
+  ', p': 'ruby-test:test-previous'
+  ', T': 'ruby-test:test-file'
+  ', w': 'git-plus:add'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  ',': ''
+
+'atom-text-editor.vim-mode-plus-input-char-waiting':
+  ',': ''

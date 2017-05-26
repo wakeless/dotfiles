@@ -1,23 +1,10 @@
 "*":
   core:
-    customFileTypes:
-      "source.ini": [
-        ".buckconfig"
-        ".flowconfig"
-      ]
-      "source.json": [
-        ".arcconfig"
-        "BUCK.autodeps"
-      ]
-      "source.python": [
-        "BUCK"
-      ]
+    destroyEmptyPanes: false
     disabledPackages: [
       "background-tips"
       "exception-reporting"
       "metrics"
-      "tree-view"
-      "linter-eslint"
     ]
     followSymlinks: false
     hideGitIgnoredFiles: true
@@ -29,28 +16,30 @@
       "tmp"
       "vendor"
     ]
-    telemetryConsent: "limited"
+    telemetryConsent: "no"
     themes: [
-      "atom-light-ui"
-      "atom-dark-syntax"
+      "unity-ui"
+      "glacier-syntax"
     ]
   editor:
     fontFamily: "Menlo"
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
-  "file-watcher":
-    promptWhenFileHasChangedOnDisk: false
   "go-plus":
-    goPath: "/Users/holman/Code/go"
-  nuclide:
-    installRecommendedPackages: true
-    "nuclide-flow":
-      warnOnNotInstalled: false
-    "nuclide-home":
-      showHome: false
+    panelDisplayMode: "closed"
+  "linter-eslint":
+    useGlobalEslint: true
+  "platformio-ide-terminal":
+    toggles:
+      autoClose: true
   "release-notes":
     viewedVersion: "0.89.0"
+  "ruby-test":
+    rspecFileCommand: "docker-compose run -e \"RAILS_ENV=test\" app rspec --tty {relative_path}"
+    rspecSingleCommand: "docker-compose run -e \"RAILS_ENV=test\"  app rspec --tty {relative_path}:{line_number}"
+    specFramework: "rspec"
   "spell-check":
     grammars: [
       "text.plain"
@@ -60,3 +49,6 @@
     ]
   welcome:
     showOnStartup: false
+".erb.source":
+  editor:
+    tabLength: 4

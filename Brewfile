@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'puma/puma'
+tap 'homebrew/versions'
 
 brew 'ack'
 brew 'coreutils'
@@ -39,3 +40,5 @@ cask 'docker'
 cask 'sketch'
 cask 'skype'
 cask 'iterm2'
+
+cask 'atom-beta'

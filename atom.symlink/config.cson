@@ -22,6 +22,7 @@
   core:
     closeDeletedFileTabs: true
     closeEmptyWindows: false
+    destroyEmptyPanes: false
     disabledPackages: [
       "background-tips"
       "exception-reporting"
@@ -38,9 +39,13 @@
       "vendor"
     ]
     telemetryConsent: "no"
+    themes: [
+      "unity-ui"
+      "glacier-syntax"
+    ]
   editor:
     fontFamily: "Menlo"
-    fontSize: 15
+    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
@@ -51,8 +56,15 @@
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
+  "platformio-ide-terminal":
+    toggles:
+      autoClose: true
   "release-notes":
     viewedVersion: "0.89.0"
+  "ruby-test":
+    rspecFileCommand: "docker-compose run -e \"RAILS_ENV=test\" app rspec --tty {relative_path}"
+    rspecSingleCommand: "docker-compose run -e \"RAILS_ENV=test\"  app rspec --tty {relative_path}:{line_number}"
+    specFramework: "rspec"
   "spell-check":
     grammars: [
       "text.plain"
@@ -71,3 +83,6 @@
   editor:
     autoIndent: false
     autoIndentOnPaste: false
+".erb.source":
+  editor:
+    tabLength: 4

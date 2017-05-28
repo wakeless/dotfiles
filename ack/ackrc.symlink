@@ -1,0 +1,5 @@
+---after-context=3
+---no-color
+---smart-case
+--ignore-dir=log/
+--ignore-dir=tmp/

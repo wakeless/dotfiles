@@ -28,9 +28,12 @@ brew 'wget'
 brew 'yarn'
 brew 'youtube-dl'
 
+brew 'macvim'
+
 cask '1password'
 cask 'firefox'
 cask 'google-chrome'
+cask 'handbrake'
 cask 'slack'
 cask 'steam'
 cask 'transmission'

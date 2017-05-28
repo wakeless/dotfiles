@@ -2,3 +2,8 @@ syntax on
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+
+nnoremap Q @q
+set tabstop=2
+set expandtab
+set shiftwidth=2

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -jar -Dwebdriver.gecko.driver=/usr/local/bin/geckodriver /usr/local/bin/selenium-server-standalone-3.0.0-beta3.jar

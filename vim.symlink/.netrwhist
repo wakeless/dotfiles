@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/michaelgall/Development/mobile-native/ios/Currinda'
+let g:netrw_dirhist_2='/Users/michaelgall/Development/mobile-native/android/build'
+let g:netrw_dirhist_3='/Users/michaelgall/Development/mobile-native/android/app/build'

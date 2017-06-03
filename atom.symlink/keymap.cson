@@ -15,3 +15,6 @@
 
 'atom-text-editor.vim-mode-plus-input-char-waiting':
   ',': ''
+
+'atom-text-editor.vim-mode.normal-mode':
+  ', w': 'custom:save-and-add'

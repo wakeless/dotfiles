@@ -17,7 +17,7 @@ function docker-volume-backup() {
 
 # restore files from /tmp/backup.tar into a docker volume
 function docker-volume-restore() {
-  docker run --rm -v /tmp:/backup -v $1:/mount busybox tar -xvf /backup/backup.tar "${@:2}"
+  docker run --rm -v /tmp:/backup -v $1:/mount -w /mount busybox tar -xvf /backup/backup.tar
   echo "Double checking files..."
-  docker run --rm -v /tmp:/backup -v $1:/mount busybox ls -lh "${@:2}"
+  docker run --rm -v /tmp:/backup -v $1:/mount busybox ls -lh /mount
 }

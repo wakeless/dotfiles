@@ -45,7 +45,6 @@
     ]
   editor:
     fontFamily: "Menlo"
-    fontSize: 16
     invisibles: {}
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
@@ -74,6 +73,8 @@
     ]
   stylefmt:
     formatOnSave: true
+  "vim-mode-plus":
+    useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
 ".erb.source":

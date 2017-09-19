@@ -2,4 +2,6 @@
 --no-color
 --smart-case
 --ignore-dir=log/
+--ignore-dir=dist/
 --ignore-dir=tmp/
+--ignore-dir=coverage/

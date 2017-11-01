@@ -74,6 +74,7 @@
   stylefmt:
     formatOnSave: true
   "vim-mode-plus":
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     useSmartcaseForSearch: true
   welcome:
     showOnStartup: false
@@ -87,3 +88,6 @@
   editor:
     autoIndent: false
     autoIndentOnPaste: false
+".rails.ruby.source":
+  editor:
+    tabType: "soft"

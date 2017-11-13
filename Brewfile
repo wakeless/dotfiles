@@ -26,6 +26,8 @@ brew 'unrar'
 brew 'wget'
 brew 'yarn'
 
+brew 'hub'
+
 brew 'macvim'
 
 cask 'atom'

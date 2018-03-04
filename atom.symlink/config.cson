@@ -19,6 +19,8 @@
   "autocomplete-modules":
     babelPluginModuleResolver: true
     webpack: true
+  "autocomplete-plus":
+    enableAutoConfirmSingleSuggestion: false
   core:
     closeDeletedFileTabs: true
     closeEmptyWindows: false
@@ -45,7 +47,9 @@
     ]
   editor:
     fontFamily: "Menlo"
+    fontSize: 15
     invisibles: {}
+    scrollPastEnd: true
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
   "go-plus":
@@ -53,6 +57,8 @@
   "linter-eslint":
     useGlobalEslint: true
   "platformio-ide-terminal":
+    style:
+      defaultPanelHeight: "25%"
     toggles:
       autoClose: true
   "prettier-atom":
@@ -61,8 +67,6 @@
   "release-notes":
     viewedVersion: "0.89.0"
   "ruby-test":
-    rspecFileCommand: "docker-compose run --rm -e \"RAILS_ENV=test\" app rspec --tty {relative_path}"
-    rspecSingleCommand: "docker-compose run --rm -e \"RAILS_ENV=test\"  app rspec --tty {relative_path}:{line_number}"
     specFramework: "rspec"
   "spell-check":
     grammars: [
@@ -73,6 +77,7 @@
     ]
   stylefmt:
     formatOnSave: true
+  "tree-view": {}
   "vim-mode-plus":
     notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     useSmartcaseForSearch: true

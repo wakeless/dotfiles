@@ -1,0 +1,10 @@
+atom-elixir@0.2.3
+ex-mode@0.18.0
+language-babel@2.76.1
+language-elixir@0.20.3
+platformio-ide-terminal@2.7.0
+rails-open-rspec@1.2.0
+ruby-test@1.0.2
+tabs-to-spaces@1.0.3
+vim-mode-plus@1.15.0
+

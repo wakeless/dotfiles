@@ -1,0 +1,39 @@
+{
+    "window.zoomLevel": 1,
+    "vim.leader": ",",
+    "search.location": "panel",
+    "editor.tabSize": 2,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "T"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "extension.runFileSpecs",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["leader", "t"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "extension.runSpecLine",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["leader", "r"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "extension.runLastSpec",
+                    "args": []
+                }
+            ]
+        }
+    ]
+}

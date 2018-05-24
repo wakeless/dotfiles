@@ -1,4 +1,15 @@
+execute pathogen#infect()
 syntax on
+
+let mapleader = ","
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+colorscheme desert
+set guifont=Monaco:h15
+
+set number
+
+let g:ctrlp_map = '<leader>r'
+let g:ctrlp_open_new_file = 'v'
 
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
@@ -7,3 +18,13 @@ nnoremap Q @q
 set tabstop=2
 set expandtab
 set shiftwidth=2
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
+set winwidth=140

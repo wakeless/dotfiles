@@ -47,7 +47,7 @@
     ]
   editor:
     fontFamily: "Menlo"
-    fontSize: 15
+    fontSize: 17
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -79,7 +79,6 @@
     formatOnSave: true
   "tree-view": {}
   "vim-mode-plus":
-    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     useSmartcaseForSearch: true
   welcome:
     showOnStartup: false

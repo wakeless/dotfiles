@@ -1,7 +1,11 @@
+### Android Studio for React Native
+if [ -x /usr/libexec/java_home ]; then
+  export JAVA_HOME=`/usr/libexec/java_home`
+  export PATH=\"$JAVA_HOME/bin:$PATH\"
+fi
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export PATH="/Users/michaelgall/Library/Android/sdk/platform-tools:$PATH"
-
-export ANDROID_HOME='/Users/michaelgall/Library/Android/sdk'
-export ANDROID_NDK='/Users/michaelgall/Library/Android/ndk'
-
-alias adb-reverse='adb reverse tcp:8081 tcp:8081'
+alias adb-reverse='adb reverse tcp:8080 tcp:8080 && adb reverse tcp:8081 tcp:8081'
+alias emulator=${ANDROID_HOME}/emulator/emulator

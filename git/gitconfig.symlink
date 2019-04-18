@@ -9,20 +9,23 @@
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
-	st = status
-	cp = cherry-pick
-	lg = log --decorate --oneline --graph
-	lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	lg = !"git lg1"
-	br = branch  --sort=committerdate
+	      st = status
+	      cp = cherry-pick
+	      lg = log --decorate --oneline --graph
+	      lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+	      lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	      lg = !"git lg1"
+        br = !"git branch --sort=committerdate |fzf --no-sort --tac| awk 'NF{print $NF}' |xargs git checkout"
+        can = commit --amend --no-edit
+        rim = rebase --interactive --autosquash origin/master
+        fixup = commit --fixup
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
         editor = vim
 [apply]
         whitespace = nowarn
@@ -32,15 +35,22 @@
         prompt = false
 [help]
         autocorrect = 1
-[push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-	default = current
 [pull]
-	rebase = true
+	      rebase = true
 [diff]
 #  wsErrorHighlight = [old,new,context]
 [color "diff"]
 	whitespace = red reverse
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[branch]
+	autosetupmerge = always
+[push]
+	default = current
+[commit]
+	gpgsign = true
+[rebase]
+  autoStash = true

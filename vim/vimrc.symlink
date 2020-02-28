@@ -1,18 +1,25 @@
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'roman/golden-ratio'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+"Plug 'amix/vim-zenroom2'
+"Plug 'plasticboy/vim-markdown'
+Plug 'reedes/vim-pencil'
+Plug 'reedes/vim-colors-pencil'
+call plug#end()
+
+let g:markdown_fenced_languages = ['ruby', 'javascript', 'sql']
 syntax on
 
 let mapleader = ","
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 colorscheme desert
 set guifont=Monaco:h15
 
 set number
 
-let g:ctrlp_map = '<leader>r'
-let g:ctrlp_open_new_file = 'v'
-
 " Wrap gitcommit file types at the appropriate length
 filetype indent plugin on
+set guifont=MonacoB2
 
 nnoremap Q @q
 set tabstop=2
@@ -24,7 +31,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <leader>t :FZF!<cr>
+
 set splitbelow
 set splitright
 
 set winwidth=140
+set rtp+=/usr/local/opt/fzf

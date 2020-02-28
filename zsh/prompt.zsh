@@ -1,4 +1,6 @@
 autoload colors && colors
+autoload -U promptinit
+promptinit
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
 
@@ -55,12 +57,12 @@ directory_name() {
 }
 
 battery_status() {
-  $ZSH/bin/battery-status
+  $ZSH/bin/battery-status -z -p
 }
 
-export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)$(hub_ci_status)\n› '
 set_prompt () {
-  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
+  export PROMPT=$'$(battery_status) in $(directory_name) $(git_dirty)$(need_push)› '
+  export RPROMPT=""
 }
 
 precmd() {

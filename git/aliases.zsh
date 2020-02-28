@@ -6,8 +6,11 @@ then
   alias git=$hub_path
 fi
 
+alias gl='git log --date-order --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(dim white) %an, %ar%Creset" --graph'
+alias glb='gl ...origin/master'
+alias fixup='glb |fzf -1 --preview="git show --stat {2}" | awk "{print \$2}" | xargs git commit --fixup'
+
 # The rest of my fun git aliases
-alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gp='git push origin HEAD'
 
@@ -21,3 +24,4 @@ alias gcb='git copy-branch-name'
 alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
+

@@ -38,3 +38,9 @@ set splitright
 
 set winwidth=140
 set rtp+=/usr/local/opt/fzf
+
+
+" explore (netrw)
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
+let g:netrw_browse_split = 25

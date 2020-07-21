@@ -28,3 +28,4 @@ hi markdownIdDeclaration  gui=bold
 "hi markdownId guifg=#2fb3a6
 "hi markdownListMarker guifg=#317849
 "highlight Cursor guibg=#15abdd
+set spell spelllang=en_us

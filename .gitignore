@@ -12,3 +12,5 @@ atom.symlink/recovery
 git/gitconfig.local.symlink
 vim.symlink/.netrwhist
 vscode/User/workspaceStorage/
+ldb.symlink/lldb-tmp-widehistory
+ldb.symlink/lldb-widehistory

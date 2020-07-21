@@ -31,6 +31,7 @@ brew 'ffmpeg'
 brew 'hub'
 
 brew 'macvim'
+brew 'ykman'
 
 cask 'ngrok'
 cask 'atom'

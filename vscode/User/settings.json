@@ -1,39 +1,113 @@
 {
-    "window.zoomLevel": 1,
-    "vim.leader": ",",
-    "search.location": "panel",
-    "editor.tabSize": 2,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "vim.otherModesKeyBindingsNonRecursive": [
+  "javascript.validate.enable": false,
+  "window.zoomLevel": 3,
+  "vim.leader": ",",
+  "editor.tabSize": 2,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.options": {
+    "rules": {
+      "no-debugger": "off"
+    }
+  },
+  "ruby.intellisense": "rubyLocate",
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["W"],
+      "after": [""],
+      "commands": [
         {
-            "before": ["leader", "T"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "extension.runFileSpecs",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["leader", "t"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "extension.runSpecLine",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["leader", "r"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "extension.runLastSpec",
-                    "args": []
-                }
-            ]
+          "command": "workbench.action.files.save",
+          "args": []
         }
-    ]
+      ]
+    },
+    {
+      "before": ["leader", "T"],
+      "after": [],
+      "commands": [
+        {
+          "command": "extension.runFileSpecs",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["leader", "s"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.tasks.runTask",
+          "args": "sorbet"
+        }
+      ]
+    },
+
+    {
+      "before": ["leader", "t"],
+      "after": [],
+      "commands": [
+        {
+          "command": "extension.runSpecLine",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["leader", "r"],
+      "after": [],
+      "commands": [
+        {
+          "command": "extension.runLastSpec",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "ActiveFileInStatusBar.enable": true,
+  "ActiveFileInStatusBar.fullpath": false,
+  "ActiveFileInStatusBar.revealFile": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.minimap.enabled": false,
+  "workbench.activityBar.visible": true,
+  "breadcrumbs.enabled": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "editor.tabCompletion": "on",
+  "eslint.packageManager": "yarn",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.lineHistory.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.wordBasedSuggestions": false,
+  "typescript.suggest.enabled": true,
+  "javascript.suggest.enabled": true,
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true,
+  "extensions.ignoreRecommendations": false,
+  "ruby.specCommand": "bin/rspec",
+  "ruby.specSaveFile": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "editor.formatOnSave": true,
+  "typescript.check.npmIsInstalled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "debug.onTaskErrors": "debugAnyway",
+  "prettier.disableLanguages": ["typescript"],
+  "liveshare.audio.startCallOnShare": true,
+  "liveshare.audio.joinCallBehavior": "accept",
+  "flow.pathToFlow": "yarn flow"
 }

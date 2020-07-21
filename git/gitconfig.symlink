@@ -20,8 +20,11 @@
 	      lg = !"git lg1"
         br = !"git branch --sort=committerdate --no-merged origin/master|fzf --no-sort --tac| awk 'NF{print $NF}' |xargs git checkout"
         can = commit --amend --no-edit
+        ri = rebase --interactive --autosquash
         rim = rebase --interactive --autosquash origin/master
         fixup = commit --fixup
+        po = push origin -u
+        pof = push origin -f
 [color]
         diff = auto
         status = auto

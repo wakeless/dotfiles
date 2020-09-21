@@ -29,6 +29,7 @@ brew 'yarn'
 brew 'ffmpeg'
 
 brew 'hub'
+brew 'gh'
 
 brew 'macvim'
 brew 'ykman'

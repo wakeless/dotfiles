@@ -6,6 +6,11 @@
 # using Homebrew.
 
 # Check for Homebrew
+if [ `uname` != "Darwin" ]; then
+  echo "Skipping homebrew on Linux"
+  exit 0
+fi
+
 if test ! $(which brew)
 then
   echo "  Installing Homebrew for you."

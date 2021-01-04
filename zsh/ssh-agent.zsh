@@ -7,9 +7,6 @@
 #
 eval $(ssh-agent)
 #
-KEYS="dsa rsa"
-for key in $KEYS ; do
-  if [ -f "~/.ssh/id_$key" ] ; then
-      ssh-add ~/.ssh/id_$key
-  fi
+for key in `ls ~/.ssh/id_* | grep -v .pub$` ; do
+  ssh-add $key
 done

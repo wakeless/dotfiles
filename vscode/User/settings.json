@@ -1,6 +1,6 @@
 {
   "javascript.validate.enable": false,
-  "window.zoomLevel": 3,
+  "window.zoomLevel": 2,
   "vim.leader": ",",
   "editor.tabSize": 2,
   "editor.multiCursorModifier": "ctrlCmd",
@@ -96,7 +96,6 @@
   "ruby.specSaveFile": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "es5",
-  "editor.formatOnSave": true,
   "typescript.check.npmIsInstalled": false,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -109,5 +108,19 @@
   "prettier.disableLanguages": ["typescript"],
   "liveshare.audio.startCallOnShare": true,
   "liveshare.audio.joinCallBehavior": "accept",
-  "flow.pathToFlow": "yarn flow"
+  "flow.pathToFlow": "yarn flow",
+  "sync.gist": "ffe43a108c0c0a0b4ea1a27140950dd1",
+  "sorbet.useBundler": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "sorbet.enabled": true,
+  "prettier.printWidth": 120,
+  "editor.formatOnSave": true,
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "julia.enableTelemetry": true,
+  "julia.executablePath": "/usr/local/bin/julia",
+  "julia.enableCrashReporter": true
 }

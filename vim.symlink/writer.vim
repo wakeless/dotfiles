@@ -1,3 +1,4 @@
+set noswapfile
 colorscheme pencil
 "set background=light
 set nonu

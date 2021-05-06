@@ -24,7 +24,7 @@
         rim = rebase --interactive --autosquash origin/master
         fixup = commit --fixup
         po = push origin -u
-        pof = push origin -f
+        pof = push origin --force-with-lease
 [color]
         diff = auto
         status = auto

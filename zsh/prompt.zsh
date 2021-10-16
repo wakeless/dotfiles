@@ -62,7 +62,7 @@ battery_status() {
 
 prompt_prefix() {
   if [ "$CODESPACES" == 'true' ]; then
-    echo -n "\[\033[0;32m\]@${GITHUB_USER} \[\033[0m\]"
+    echo -n "\033[0;32m@${GITHUB_USER}\033[0m"
   else
     battery_status
   fi

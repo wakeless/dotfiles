@@ -157,5 +157,10 @@ if [ "$(uname -s)" == "Darwin" ]; then
   fi
 fi
 
+# If we are on codespaces we want to automatically switch the shell to zsh
+if [ $CODESPACES == 'true' ]; then
+  usermod --shell $(which zsh) $(whoami)
+  
+fi
 echo ''
 echo '  All installed!'

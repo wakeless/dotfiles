@@ -6,7 +6,5 @@ fi
 
 sudo add-apt-repository ppa:x4121/ripgrep
 sudo apt-get update
-sudo apt-get install ripgrep
-sudo apt-get install bc
-sudo apt-get install hub
+sudo apt-get install -Y ripgrep bc hub
 

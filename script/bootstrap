@@ -131,7 +131,7 @@ link_file () {
 install_dotfiles () {
   info 'installing dotfiles'
 
-  local overwrite_all=false backup_all=false skip_all=true
+  local overwrite_all=true backup_all=false skip_all=false
 
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
@@ -157,10 +157,5 @@ if [ "$(uname -s)" == "Darwin" ]; then
   fi
 fi
 
-# If we are on codespaces we want to automatically switch the shell to zsh
-if [ $CODESPACES == 'true' ]; then
-  usermod --shell $(which zsh) $(whoami)
-  
-fi
 echo ''
 echo '  All installed!'

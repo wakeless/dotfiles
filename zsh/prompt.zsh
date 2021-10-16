@@ -60,8 +60,16 @@ battery_status() {
   $ZSH/bin/battery-status -z -p
 }
 
+prompt_prefix() {
+  if [ "$CODESPACES" == 'true' ]; then
+    echo -n "\[\033[0;32m\]@${GITHUB_USER} \[\033[0m\]"
+  else
+    battery_status
+  fi
+}
+
 set_prompt () {
-  export PROMPT=$'$(battery_status) in $(directory_name) $(git_dirty)$(need_push)› '
+  export PROMPT=$'$(prompt_prefix) in $(directory_name) $(git_dirty)$(need_push)› '
   export RPROMPT=""
 }
 

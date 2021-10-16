@@ -140,8 +140,10 @@ install_dotfiles () {
   done
 }
 
-#setup_gitconfig
 printenv
+if [ $CODESPACES != 'true' ]; then
+  setup_gitconfig
+fi
 install_dotfiles
 
 # If we're on a Mac, let's install and setup homebrew.

@@ -1,4 +1,4 @@
-#!env sh
+#!/usr/bin/env sh
 
 if [ `uname` != "Linux" ]; then
     echo "Run on Linux (not on Mac OS X)"; exit 1

@@ -2,7 +2,6 @@
 #
 # bootstrap installs things.
 
-. script/install
 
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
@@ -28,6 +27,10 @@ fail () {
   echo ''
   exit
 }
+
+info "Running script/install"
+. script/install
+info "done"
 
 setup_gitconfig () {
   if ! [ -f git/gitconfig.local.symlink ]; then
@@ -142,7 +145,6 @@ install_dotfiles () {
   done
 }
 
-printenv
 if [ $CODESPACES != 'true' ]; then
   setup_gitconfig
 fi

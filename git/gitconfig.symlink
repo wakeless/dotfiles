@@ -37,6 +37,8 @@
         editor = vim
 [apply]
         whitespace = nowarn
+[merge]
+  conflictStyle=zdiff3
 [mergetool]
         keepBackup = false
 [difftool]
@@ -47,6 +49,7 @@
 	      rebase = true
 [diff]
 #  wsErrorHighlight = [old,new,context]
+  algorithm=histogram
 [color "diff"]
 	whitespace = red reverse
 [filter "lfs"]
@@ -57,8 +60,7 @@
 [branch]
 	autosetupmerge = always
 [push]
-	default = current
+	default = simple
 [commit]
-	gpgsign = true
 [rebase]
   autoStash = true

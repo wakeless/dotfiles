@@ -8,5 +8,5 @@
 eval $(ssh-agent)
 #
 for key in `ls ~/.ssh/id_* | grep -v .pub$` ; do
-  ssh-add $key
+  ssh-add --apple-load-keychain $key
 done

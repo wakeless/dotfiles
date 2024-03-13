@@ -1,3 +1,1 @@
-if [ -f /usr/local/opt/asdf/asdf.sh ]; then
-  . /usr/local/opt/asdf/asdf.sh
-fi
+$(brew --prefix asdf)/libexec/asdf.sh

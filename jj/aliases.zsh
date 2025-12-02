@@ -1,0 +1,2 @@
+alias jl='jj log'
+

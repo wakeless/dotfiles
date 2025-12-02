@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "ASDF"
+
+source $HOME/.dotfiles/livebook/vars.zsh

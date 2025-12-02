@@ -1,1 +1,1 @@
-$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+$(brew --prefix asdf)/etc/bash_completion.d/asdf

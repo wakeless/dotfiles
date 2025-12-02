@@ -8,6 +8,7 @@
         sw = switch
         swc = switch --create
         co = checkout
+  def = !"git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
@@ -18,13 +19,14 @@
 	      lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	      lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
 	      lg = !"git lg1"
-        br = !"git branch --sort=committerdate --no-merged origin/master|fzf --no-sort --tac| awk 'NF{print $NF}' |xargs git checkout"
+  br = !"git branch --sort=committerdate --no-merged origin/$(git def)|fzf --no-sort --tac --preview='git show --stat {1}'| awk 'NF{print $NF}' |xargs git checkout"
+        brr = !"git branch --sort=committerdate --no-merged origin/$(git def)|fzf --no-sort --tac --preview='git log --oneline --decorate --graph -20 --stat {1}' | awk 'NF{print $NF}' |xargs git checkout"
         can = commit --amend --no-edit
         ri = rebase --interactive --autosquash
-        rim = rebase --interactive --autosquash origin/master
+        rim = !"git rebase --interactive --autosquash origin/$(git def)"
         fixup = commit --fixup
         po = push origin -u
-        pof = push origin --force-with-lease
+  pof = push origin -u --force-with-lease --recurse-submodules=check
 [color]
         diff = auto
         status = auto
@@ -35,6 +37,8 @@
 [core]
   excludesfile = ~/.gitignore
         editor = vim
+  untrackedCache=true
+  fsmonitor=true
 [apply]
         whitespace = nowarn
 [merge]

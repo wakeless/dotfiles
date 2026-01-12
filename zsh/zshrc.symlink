@@ -2,7 +2,7 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$(dirname $(dirname $(realpath ${(%):-%N})))
 
-export PATH="./bin:~/.local/bin:/usr/local/sbin:$ZSH/bin:$PATH"
+export PATH="./bin:$HOME/.local/bin:/usr/local/sbin:$ZSH/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 # your project folder that we can `c [tab]` to
@@ -69,3 +69,6 @@ eval "$(pyenv init -)"
 # asdf version manager
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 eval "$(~/.local/bin/mise activate zsh)"
+
+# 1Password CLI plugins
+source /Users/michaelgall/.config/op/plugins.sh

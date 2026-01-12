@@ -6,7 +6,15 @@ set -e
 
 cd "$(dirname $0)"/..
 
+# find the installers and run them iteratively
+find . -name preinstall.sh | while read installer ; do 
+  echo "Running ${installer}"
+  sh -c "${installer}"
+done
+
 if [ `uname` != "Linux" ]; then
+  echo "› xcode-select --install"
+  xcode-select --install || true
   echo "› brew bundle"
   brew bundle
 fi

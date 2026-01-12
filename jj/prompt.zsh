@@ -1,15 +1,11 @@
-# jj (Jujutsu) prompt for RPROMPT
-# Adapted from https://github.com/plasticine/dotfiles
+# VCS prompt for RPROMPT (jj or git)
+# jj prompt adapted from https://github.com/plasticine/dotfiles
 
 jj_repo() {
   jj root --quiet &> /dev/null
 }
 
 jj_prompt() {
-  if ! jj_repo; then
-    return
-  fi
-
   echo -e "$(
     jj log --ignore-working-copy --no-graph --color never --revisions @ --template "
       separate(
@@ -36,4 +32,36 @@ jj_prompt() {
       )
     "
   )"
+}
+
+git_repo() {
+  git rev-parse --is-inside-work-tree &> /dev/null
+}
+
+git_prompt() {
+  local branch=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{print $NF}')
+  local dirty=""
+
+  if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
+    dirty="%{%F{red}%}*%{%f%}"
+  fi
+
+  local ahead=$(git log --oneline @{u}.. 2>/dev/null | wc -l | tr -d ' ')
+  local behind=$(git log --oneline ..@{u} 2>/dev/null | wc -l | tr -d ' ')
+  local arrows=""
+
+  [[ $ahead -gt 0 ]] && arrows+="%{%F{magenta}%}${ahead}↑%{%f%}"
+  [[ $behind -gt 0 ]] && arrows+="%{%F{cyan}%}${behind}↓%{%f%}"
+
+  echo -n "%{%F{green}%}${branch}%{%f%}${dirty}"
+  [[ -n $arrows ]] && echo -n " ${arrows}"
+}
+
+# Main VCS prompt - checks jj first, then git
+vcs_prompt() {
+  if jj_repo; then
+    jj_prompt
+  elif git_repo; then
+    git_prompt
+  fi
 }

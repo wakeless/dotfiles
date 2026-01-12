@@ -40,21 +40,23 @@ git_repo() {
 
 git_prompt() {
   local branch=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{print $NF}')
-  local dirty=""
+  [[ -z "$branch" ]] && return
 
+  local dirty=""
   if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
-    dirty="%{%F{red}%}*%{%f%}"
+    dirty="%F{red}*"
   fi
 
   local ahead=$(git log --oneline @{u}.. 2>/dev/null | wc -l | tr -d ' ')
   local behind=$(git log --oneline ..@{u} 2>/dev/null | wc -l | tr -d ' ')
   local arrows=""
 
-  [[ $ahead -gt 0 ]] && arrows+="%{%F{magenta}%}${ahead}↑%{%f%}"
-  [[ $behind -gt 0 ]] && arrows+="%{%F{cyan}%}${behind}↓%{%f%}"
+  [[ $ahead -gt 0 ]] && arrows+="%F{magenta}${ahead}↑"
+  [[ $behind -gt 0 ]] && arrows+="%F{cyan}${behind}↓"
 
-  echo -n "%{%F{green}%}${branch}%{%f%}${dirty}"
+  echo -n "%F{green}${branch}${dirty}"
   [[ -n $arrows ]] && echo -n " ${arrows}"
+  echo -n "%f"
 }
 
 # Main VCS prompt - checks jj first, then git
@@ -64,4 +66,6 @@ vcs_prompt() {
   elif git_repo; then
     git_prompt
   fi
+  # Always reset colors at the end
+  echo -n "%f%b"
 }

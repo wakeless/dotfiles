@@ -70,7 +70,7 @@ prompt_prefix() {
 
 set_prompt () {
   export PROMPT=$'$(prompt_prefix) in $(directory_name) $(git_dirty)$(need_push)› '
-  export RPROMPT=""
+  export RPROMPT=$'$(jj_prompt)'
 }
 
 precmd() {

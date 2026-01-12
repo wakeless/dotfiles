@@ -1,12 +1,7 @@
-#
-###
-## Alternative to gnome-keyring to load ssh keys into ssh-agent.
-##
-## $ source .ssh/ssh-agent
-###
-#
-eval $(ssh-agent)
-#
-for key in `ls ~/.ssh/id_* | grep -v .pub$` ; do
-  ssh-add --apple-load-keychain $key
+# Load ssh keys into ssh-agent from keychain
+eval $(ssh-agent) >/dev/null
+
+for key in ~/.ssh/id_*(N); do
+  [[ "$key" == *.pub ]] && continue
+  ssh-add --apple-load-keychain "$key" 2>/dev/null
 done

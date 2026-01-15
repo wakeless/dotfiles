@@ -1,0 +1,1 @@
+We use jujutsu for source control. **ALWAYS** create a new commit and describe it before starting working. `jj new -m "<description>"`. For larger pieces of work this will occur multiple times throughout the work.

@@ -22,6 +22,7 @@ brew 'ffmpeg'
 
 brew 'hub'
 brew 'gh'
+brew 'jj'
 
 brew 'macvim'
 brew 'ykman'

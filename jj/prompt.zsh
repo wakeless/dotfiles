@@ -11,30 +11,26 @@ jj_prompt() {
   fi
 
   echo -e "$(
-    jj log --ignore-working-copy --no-graph --color never --revisions @ --template "
+    jj log --ignore-working-copy --no-graph --color never --revisions @ --template '
       separate(
-        ' ',
+        " ",
         coalesce(
-          dim(surround(
-            '\"',
-            '\"',
-            truncate_end(24, description.first_line(), '...')
-          )),
-          label(if(empty, 'empty'), bold(color('11', description_placeholder)))
+          surround("%F{8}\"", "\"%f", truncate_end(24, description.first_line(), "...")),
+          surround("%B%F{11}", "%f%b", description_placeholder)
         ),
-        hex('#a6da95', '+') ++ hex('#a6da95', self.diff().stat().total_added()),
-        hex('#ed8796', '-') ++ hex('#ed8796', self.diff().stat().total_removed()),
-        hex('#c6a0f6', bold(change_id.shortest(4).prefix())) ++ hex('#5b6078', change_id.shortest(4).rest()),
-        hex('#7dc4e4', bold(commit_id.shortest(8).prefix())) ++ hex('#5b6078', commit_id.shortest(8).rest()),
-        hex('#f0c6c6', bookmarks.join(' ')),
-        if(git_head, label('git_head', hex('#8bd5ca', 'git head'))),
-        if(conflict, label('conflict', hex('#ed8796', '(conflict)'))),
-        if(empty, label('empty', '(empty)')),
-        if(immutable, '(immutable)'),
-        if(divergent, '(divergent)'),
-        if(hidden, '(hidden)'),
+        surround("%F{#a6da95}", "%f", "+") ++ surround("%F{#a6da95}", "%f", self.diff().stat().total_added()),
+        surround("%F{#ed8796}", "%f", "-") ++ surround("%F{#ed8796}", "%f", self.diff().stat().total_removed()),
+        surround("%B%F{#c6a0f6}", "%f%b", change_id.shortest(4).prefix()) ++ surround("%F{#5b6078}", "%f", change_id.shortest(4).rest()),
+        surround("%B%F{#7dc4e4}", "%f%b", commit_id.shortest(8).prefix()) ++ surround("%F{#5b6078}", "%f", commit_id.shortest(8).rest()),
+        surround("%F{#f0c6c6}", "%f", bookmarks.join(" ")),
+        if(self.contained_in("visible_heads() & first_parent(@)"), surround("%F{#8bd5ca}", "%f", "git head")),
+        if(conflict, surround("%F{#ed8796}", "%f", "(conflict)")),
+        if(empty, "(empty)"),
+        if(immutable, "(immutable)"),
+        if(divergent, "(divergent)"),
+        if(hidden, "(hidden)"),
       )
-    "
+    '
   )"
 }
 

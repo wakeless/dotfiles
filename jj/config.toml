@@ -162,3 +162,6 @@ dt = ["diff-trunk"]
 fetch = ["git", "fetch"]
 push = ["git", "push"]
 "push!" = ["git", "push", "-r", "@", "--allow-new"]
+
+[remotes.origin]
+auto-track-bookmarks = "*"

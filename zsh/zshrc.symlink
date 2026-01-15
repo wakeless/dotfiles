@@ -5,6 +5,13 @@ export ZSH=$(dirname $(dirname $(realpath ${(%):-%N})))
 export PATH="./bin:$HOME/.local/bin:/usr/local/sbin:$ZSH/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
+# Locale settings for UTF-8 support
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Elixir/Erlang UTF-8 support
+export ELIXIR_ERL_OPTIONS="+fnu"
+
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Development
 
@@ -76,3 +83,8 @@ fi
 
 # 1Password CLI plugins
 [[ -f ~/.config/op/plugins.sh ]] && source ~/.config/op/plugins.sh
+
+# Add npm global bin to PATH on sprite
+if (( $+commands[sprite-env] )); then
+  export PATH="$(npm config get prefix)/bin:$PATH"
+fi

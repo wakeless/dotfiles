@@ -1,1 +1,3 @@
-We use jujutsu for source control. **ALWAYS** create a new commit and describe it before starting working. `jj new -m "<description>"`. For larger pieces of work this will occur multiple times throughout the work.
+# Source Control (jujutsu)
+
+**ALWAYS** run `jj new -m "<description>"` BEFORE making any file changes. This must be the first action when starting any new task or subtask. For larger pieces of work, create multiple commits throughout - one per logical change.
